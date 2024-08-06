@@ -1,0 +1,115 @@
+﻿@model Product
+<section class="description">
+    <div class="box">
+        <div class="navigation">
+            <span><a class="select" asp-controller="home" asp-action="index">Ana Səhifə</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span><a class="select" asp-controller="product" asp-action="">Məhsul</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="select">@Model.Name</span>
+        </div>
+        <div class="items mb-6">
+            <h2 class="lato fw-700 med-h2 d-none">@Model.Name</h2>
+
+            <div class="images">
+                <div class="left nomedia">
+                    @foreach (var item in Model.Photos)
+                    {
+                        <div class="img">
+                            <img src="/img/@item.PhotoName" alt="" width="59px" height="59px">
+                        </div>
+                    }
+                </div>
+                <div class="left media-left">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            @foreach (var item in Model.Photos)
+                            {
+                                <div class="swiper-slide">
+                                    <div class="img">
+                                        <img src="/img/@item.PhotoName" alt="" width="59px" height="59px">
+                                    </div>
+                                </div>
+                            }
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img src="" alt="" width="59px" height="59px">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img src="" alt="" width="59px" height="59px">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img src="" alt="" width="59px" height="59px">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img src="" alt="" width="59px" height="59px">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="img">
+                                    <img src="" alt="" width="59px" height="59px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="right">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="text">
+                <h2 class="lato fw-700">@Model.Name</h2>
+                <div class="txt d-flex mt-4">
+                    <div class="item">
+                        <p>İdarəetmə:</p>
+                        <span>@Model.Control</span>
+                    </div>
+                    <div class="item">
+                        <p>Tip:</p>
+                        <span>@Model.Type</span>
+                    </div>
+                    <div class="item">
+                        <p>Yaş qrupu:</p>
+                        <span>@Model.AgeGroup</span>
+                    </div>
+                    <div class="item">
+                        <p>Kateqoriya:</p>
+                        <span>@Model.Category.Name</span>
+                    </div>
+                    <div class="item">
+                        <p>Ölkə:</p>
+                        <span>@Model.Country</span>
+                    </div>
+                    <div class="item">
+                        <p>Brend:</p>
+                        <span>@Model.Brand</span>
+                    </div>
+                    <div class="item">
+                        <p>Vəziyyət:</p>
+                        <span>@Model.State</span>
+                    </div>
+                    <div class="item">
+                        <p>Sahib sayı:</p>
+                        <span>@Model.Owners</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/994554654635?text=Salam%2C%20məhsulunuzu%20almaq%20istəyirəm" target="_blank">Almaq üçün əlaqə</a>
+            </div>
+        </div>
+        <div class="info mb-6">
+            <h2 class="mb-12 lato fw-700">Daha çox məlumat</h2>
+            <div class="info-txt">
+                <h3 class="mb-4 text-dark">@Model.Name</h3>
+                <p class="mb-4">@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</section>

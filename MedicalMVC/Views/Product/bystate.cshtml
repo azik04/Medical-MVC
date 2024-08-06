@@ -1,0 +1,211 @@
+﻿@model GetAllVM
+<section class="products">
+    <div class="box">
+        <div class="navigation">
+            <span><a class="select" asp-controller="Home" asp-action="Index">Ana səhifə</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="select">Məhsullar</span>
+        </div>
+        <h2 class="mb-4 prod">Məhsullar <span class="d-none">@Model.Products?.Count</span></h2>
+        <div class="items">
+            <div class="left-items">
+                <div class="item mb-32">
+                    <div class="head">
+                        <h5>Məhsul Kateqoriyası</h5>
+                    </div>
+                    <div class="list">
+                        <form class="body cat-list" method="post">
+                            @if (Model.Categories != null && Model.Categories.Any())
+                            {
+                                @foreach (var item in Model.Categories)
+                                {
+                                    <div class="d-flex align-items-center mb-3">
+                                        <a asp-controller="product" asp-action="bycategory" asp-route-id="@item.Id" class="category-link d-flex align-items-center">@item.Name</a>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="category-item"><p>Kateqoriyalar mövcud deyil</p></div>
+                            }
+                        </form>
+                        <span class="hide">Daha az göstər</span>
+                        <span class="show pt-2">Daha çox göstər</span>
+                    </div>
+                </div>
+                <div class="item mb-32">
+                    <div class="head">
+                        <h5>Vəziyyət</h5>
+                    </div>
+                    <div class="list">
+                        <form class="body" method="post">
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="Yeni" class="state-link" data-state="Yeni">Yeni</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="İkinciƏl" class="state-link" data-state="İkinciƏl">İkinci əl</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="Yenilənmiş" class="state-link" data-state="Yenilənmiş">Yenilənmiş</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="right-items">
+                <div class="filter">
+                    <div class="top">
+                        <div class="left">
+                            <h4>@Model.Products?.Count məhsul tapıldı</h4>
+                        </div>
+                        <div class="right d-flex align-items-center">
+                            <h4>Sıralamaq</h4>
+                            <form method="post" id="categoryForm">
+                                <select class="form-select" aria-label="Default select example" id="categorySelect">
+                                    <option value="IndexProd" selected>Hamısını Göstər</option>
+                                    <option value="AlphabetProd">Hamısını Əlifba Sırası ilə Göstər (A - Z)</option>
+                                    <option value="LatestProd">Ən Son Əlavə Edilən Məhsullar</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="top-media d-none justify-content-between align-items-center mb-3">
+                        <button class="filtr-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                 fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                            </svg> Filter
+                        </button>
+                        <div class="dropdown">
+                            <button type="button" class="btn border border-0" data-bs-toggle="dropdown">
+                                <img src="/img/sorticon.png" alt="">
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a asp-controller="product" asp-action="" class="dropdown-item">Hamısını Göstər</a></li>
+                                <li><a asp-controller="product" asp-action="alphabet" class="dropdown-item">Hamısını Əlifba Sırası ilə Göstər (A - Z)</a></li>
+                                <li><a asp-controller="product" asp-action="latest" class="dropdown-item">Ən Son Əlavə Edilən Məhsullar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom d-flex align-items-center">
+                        <div><span class="me-4">Tibbi Mebellər</span><i class="fa-solid fa-xmark"></i></div>
+                        <a href="">Hamısını Təmizlə</a>
+                    </div>
+                </div>
+                <div class="products-box prd-box">
+                    @if (Model.Products != null && Model.Products.Any())
+                    {
+                        @foreach (var item in Model.Products)
+                        {
+                            if (item == null)
+                            {
+                                <h2>Məhsul Tapılmadı</h2>
+                            }
+                            else
+                            {
+                                <div class="item">
+                                    <a asp-controller="product" asp-action="id" asp-route-id="@item.Id">
+                                        <div class="img">
+                                            @if (item.Photos != null)
+                                            {
+                                                foreach (var ph in item.Photos)
+                                                {
+                                                    <img src="/img/@ph.PhotoName" alt="@item.Name">
+                                                }
+                                            }
+                                        </div>
+                                        <div class="txt">
+                                            <div class="name mb-3">
+                                                <h4 class="mb-0 lato fw-700">@item.Name</h4>
+                                            </div>
+                                            <div class="cat">
+                                                <span class="lato">@item.Category.Name</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <h2>Məhsullar yoxdur</h2>
+                    }
+                </div>
+                <ul class="pagination mt-3 mb-0">
+                    <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(Model.CurrentPage - 1)">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                    </li>
+                    @for (int i = 1; i <= Model.TotalPages.GetValueOrDefault(); i++)
+                    {
+                        <li class="page-item @(Model.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="?page=@i">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                        <a class="page-link" href="?page=@(Model.CurrentPage + 1)">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="media-filter ">
+        <div class="items">
+            <div class="f-head pb-2 d-flex justify-content-between align-items-center">
+                <h3>Filter</h3>
+                <div class="d-flex align-items-center">
+                    <button>Tətbiq et</button>
+                    <i class="fa-solid fa-xmark ms-3"></i>
+                </div>
+            </div>
+            <div class="f-body">
+                <div class="item mb-2 pb-2">
+                    <div class="head">
+                        <h5>Məhsul Kateqoriyası</h5>
+                    </div>
+                    <div class="list">
+                        <form class="body cat-list" method="post">
+                            @if (Model.Categories != null && Model.Categories.Any())
+                            {
+                                @foreach (var item in Model.Categories)
+                                {
+                                    <div class="d-flex align-items-center mb-3">
+                                        <a asp-controller="product" asp-action="bycategory" asp-route-id="@item.Id" class="category-link d-flex align-items-center">@item.Name</a>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="category-item"><p>Kateqoriyalar mövcud deyil</p></div>
+                            }
+                        </form>
+                        <span class="hide">Daha az göstər</span>
+                        <span class="show pt-2">Daha çox göstər</span>
+                    </div>
+                </div>
+                <div class="item mb-2 pb-2">
+                    <div class="head">
+                        <h5>Vəziyyət</h5>
+                    </div>
+                    <div class="list">
+                        <form class="body" method="post">
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="Yeni" class="state-link" data-state="Yeni">Yeni</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="İkinciƏl" class="state-link" data-state="İkinciƏl">İkinci əl</a>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <a asp-controller="product" asp-action="bystate" asp-route-state="Yenilənmiş" class="state-link" data-state="Yenilənmiş">Yenilənmiş</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

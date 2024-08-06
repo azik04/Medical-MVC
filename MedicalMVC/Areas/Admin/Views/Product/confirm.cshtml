@@ -1,0 +1,108 @@
+﻿@model ConfirmViewModel
+<section class="post box">
+        <img class="bg-img1" src="img/Vector.png" alt="">
+        <img class="bg-img2" src="img/Group 1000004136.png" alt="">
+        <div class="navigation">
+            <span><a class="select" asp-area="" asp-controller="home" asp-action="Index">Home</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span><a class="select" asp-area="admin" asp-controller="home" asp-action="Index">Admin</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span><a class="select" asp-area="admin" asp-controller="product" asp-action="notconfirmed">Not Confirmed</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="select">Confirm Product</span>
+        </div>
+        <h2 class="mb-4 lato fw-700">Post an Ad</h2>
+        <form asp-controller="product" asp-action="confirm" enctype="multipart/form-data" method="post">
+            <div class="inputlar">
+                <div class="inputs mr-20">
+                    <h4 class="lato">User Name</h4>
+                    <input type="text" placeholder="Type your UserName" asp-for="UserName">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.UserName)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">User Email</h4>
+                    <input type="text" placeholder="Type your UserEmail" asp-for="UserEmail">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.UserEmail)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">User Phone</h4>
+                    <input type="text" placeholder="Type your UserPhone" asp-for="UserPhone">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.UserPhone)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Product Name</h4>
+                    <input type="text" placeholder="Type your Name" asp-for="Name">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Name)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Product Control</h4>
+                    <input type="text" placeholder="Type your Control" asp-for="Control">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Control)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Product Country</h4>
+                    <input type="text" placeholder="Type your Country" asp-for="Country">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Country)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Product AgeGroup</h4>
+                    <input type="text" placeholder="Type your AgeGroup" asp-for="AgeGroup">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.AgeGroup)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Product Type</h4>
+                    <input type="text" placeholder="Type your Type" asp-for="Type">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Type)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Product Brand</h4>
+                    <input type="text" placeholder="Type your Brand" asp-for="Brand">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Brand)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Product Owners</h4>
+                    <input type="text" placeholder="Type your Owners" asp-for="Owners">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Owners)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Product State</h4>
+                    <input type="text" placeholder="Type your State" asp-for="State">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.State)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Product Category</h4>
+                    <select asp-for="CategoryId" class="form-select" aria-label="Default select example">
+                        <option value="@Model.CategoryId">@Model.Category.Name</option>
+                        @if (Model.Categories != null && Model.Categories.Any())
+                        {
+                            foreach (var category in Model.Categories)
+                            {
+                               
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        }
+                        else
+                        {
+                            <option value="">No categories available</option>
+                        }
+                    </select>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.CategoryId)</span>
+                </div>
+            </div>
+            <div class="txtarea mb-4">
+                <h4 class="lato">Product Description</h4>
+                <textarea placeholder="Describe the product" asp-for="Description" cols="30" rows="8"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Description)</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Post an ad</button>
+            <div class="submit">
+                <div class="item">
+                    <img class="mb-4 me-2" src="/img/post.png" width="90px" height="93px" alt="">
+                    <h3>You successfully submitted the ad.</h3>
+                    <p>We will contact you shortly.</p>
+                    <a class="mt-4" href="/">Go to main page</a>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </form>
+</section>

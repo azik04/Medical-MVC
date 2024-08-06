@@ -1,0 +1,105 @@
+﻿@model RequestViewModel
+
+<section class="post">
+    <div class="box">
+        <img class="bg-img1" src="img/Vector.png" alt="">
+        <img class="bg-img2" src="img/Group 1000004136.png" alt="">
+        <div class="navigation">
+            <span><a class="select" asp-controller="Home" asp-action="Index">Ana səhifə</a></span>
+            <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <span class="select">Elan yerləşdir</span>
+        </div>
+        <h2 class="mb-4 lato fw-700">Elan yerləşdir</h2>
+        <form asp-controller="Product" asp-action="request" enctype="multipart/form-data" method="post">
+            <div class="inputlar">
+                <div class="inputs mr-20">
+                    <h4 class="lato">Adınız</h4>
+                    <input type="text" asp-for="Name" placeholder="Adınızı daxil edin" class="form-control">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Name)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Telefon nömrəniz</h4>
+                    <input type="text" asp-for="Phone" placeholder="Telefon nömrənizi daxil edin" class="form-control">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Phone)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Email ünvanınız</h4>
+                    <input type="text" asp-for="Email" placeholder="Email ünvanınızı daxil edin" class="form-control">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Məhsul Kateqoriyası</h4>
+                    <select asp-for="CategoryId" class="form-select" aria-label="Default select example">
+                        <option value="">Kateqoriyanı seçin</option>
+                        @if (Model.Categories != null && Model.Categories.Any())
+                        {
+                            foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        }
+                        else
+                        {
+                            <option value="">Kateqoriyalar mövcud deyil</option>
+                        }
+                    </select>
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.CategoryId)</span>
+                </div>
+                <div class="inputs mr-20">
+                    <h4 class="lato">Məhsul Sahibinin Sayı</h4>
+                    <input type="number" asp-for="Owners" placeholder="Sahib Sayını Daxil Edin" class="form-control">
+                    <span class="text-danger">@Html.ValidationMessageFor(model => model.Owners)</span>
+                </div>
+                <div class="inputs">
+                    <h4 class="lato">Məhsulun Vəziyyəti</h4>
+                    <select asp-for="State" class="form-select" aria-label="Default select example">
+                        <option value="">Vəziyyəti seçin</option>
+                        @foreach (var state in Enum.GetValues(typeof(State)).Cast<State>())
+                        {
+                            <option value="@state">@state</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="txtarea mb-4">
+                <h4 class="lato">Məhsul Təsviri</h4>
+                <textarea asp-for="Description" placeholder="Məhsulu təsvir edin" class="form-control" cols="30" rows="8"></textarea>
+                <span class="text-danger">@Html.ValidationMessageFor(model => model.Description)</span>
+            </div>
+            <div class="inputs">
+                <h4 class="lato">Məhsul Şəkilləri</h4>
+                <div class="photo d-flex">
+                    <div class="leftbar">
+                        <label for="photos" class="file-label">
+                            <div class="icon mb-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                                </svg>
+                            </div>
+                            <p>
+                                Yükləmək üçün klikləyin və ya sürüşdürüb buraxın<br>
+                                <span class="hide-media">SVG, PNG, JPG və ya GIF</span>
+                            </p>
+                            <input type="file" id="photos" asp-for="Photos" multiple class="form-control">
+                        </label>
+                        <span class="text-danger">@Html.ValidationMessageFor(model => model.Photos)</span>
+                    </div>
+                    <div class="right">
+                        <!-- Fayl adları bura dinamik olaraq əlavə olunacaq -->
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Elanı yerləşdir</button>
+            <div class="submit mt-4 d-none">
+                <div class="item">
+                    <img class="mb-4 me-2" src="/img/post.png" width="90px" height="93px" alt="">
+                    <h3>Elanınızı uğurla təqdim etdiniz.</h3>
+                    <p>Biz qısa müddətdə sizinlə əlaqə saxlayacağıq.</p>
+                    <a class="mt-4" href="/">Ana səhifəyə qayıt</a>
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

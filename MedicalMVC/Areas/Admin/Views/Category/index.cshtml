@@ -1,0 +1,21 @@
+﻿@model ICollection<Category>
+<section class="categories box">
+    <div class="navigation">
+        <span><a class="select" asp-area="" asp-controller="home" asp-action="index">Home</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span><a class="select" asp-area="admin" asp-controller="home" asp-action="index">Admin</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="select">All Category</span>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="category">
+            <div class="category-name">
+                <p>@item.Name</p>
+            </div>
+            <a asp-action="remove" asp-route-id="@item.Id">Remove</a>
+        </div>
+
+    }
+
+</section>

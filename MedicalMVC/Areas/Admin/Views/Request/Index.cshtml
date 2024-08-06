@@ -1,0 +1,35 @@
+﻿@model ICollection<Request>
+<section class="allAdmins box">
+    <div class="navigation">
+        <span><a class="select" asp-area="" asp-controller="home" asp-action="Index">Home</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span><a class="select" asp-area="admin" asp-controller="home" asp-action="Index">Admin</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="select">All Admins</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Email</td>
+                    <td>@item.Message</td>
+                    <td><a asp-area="admin" asp-controller="request" asp-action="remove" asp-route-id="@item.Id">Remove</a></td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</section>

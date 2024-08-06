@@ -1,0 +1,1064 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* header */
+header {
+    width: 100%;
+    padding: 6px 120px;
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+
+}
+
+.vibor_yazika {
+    width: 81px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgba(99, 115, 129, 1);
+    border: 1px solid rgba(223, 228, 234, 1);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+}
+.vibor_yazika a{
+    text-decoration: none;
+    color: rgba(99, 115, 129, 1);
+
+}
+.yaziki a{
+    text-decoration: none;
+    color: rgba(99, 115, 129, 1);
+
+}
+.yaziki{
+    width: 81px;
+    height: 0px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid rgba(223, 228, 234, 1);
+    color: rgba(99, 115, 129, 1);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: absolute;
+    top: 56px;
+    transition: 0.5s;
+    overflow: hidden;
+
+
+}
+
+.yaziki2{
+    height: 96px;
+}
+.yaziki ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.yaziki li{
+    margin-top: 12px;
+}
+.menu{
+    display: none;
+}
+.otkr{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 150000000;
+    top: 0;
+    left: 0;
+    background-color: #389497 !important;
+}
+.fa-xmark{
+    position: absolute;
+    top: 31px;
+    right: 24px;
+    color: white;
+    font-size: 20px;
+}
+
+.nomer_telefona {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(56, 148, 151, 1);
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.nomer_telefona img {
+    transition: 0.5s;
+
+}
+.nomer_telefona:hover img {
+    content: url('phone\ filled\ icon.png')
+}
+
+
+.nomer_telefona p {
+    margin-left: 12px;
+    transition: 0.5s;
+    margin-top: 15px;
+
+}
+
+/* .nomer_telefona:hover p {
+    font-weight: 500;
+} */
+
+.vibor_yazika i {
+    margin-left: 4px;
+}
+
+
+
+/* Nav */
+
+nav {
+    width: 100%;
+    background-color: rgba(56, 148, 151, 1);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 120px;
+    height: 74px;
+
+}
+
+nav ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin-left: 20px;
+    align-items: center;
+    transition: 0.5s;
+    padding-top: 10px;
+}
+
+
+.info2 {
+    padding: 10px;
+    transition: 0.5s;
+
+}
+
+.info2:hover {
+    background-color: rgba(44, 117, 119, 1);
+    border-radius: 12px;
+}
+
+.perexod_na_stranici .lupa1 {
+    color: white;
+    margin-left: 88px;
+}
+
+.fa-angle-down {
+    margin-left: 8px;
+
+}
+.viyti{
+    font-size: 20px;
+    display: none;
+}
+
+.input-group.active{
+    display: flex !important;
+}
+/* .form-control{
+    padding:0px 12px 6px 12px !important ;
+} */
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+.vibor_kat{
+    width: 60%;
+    margin-left: 24px;
+    height: 300px;
+    margin-top: 106px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+.kat{
+width: 100%;
+padding-bottom: 0px;
+border-bottom: 1px solid white;
+text-align: left;
+font-size: 32px;
+font-family: "Roboto", sans-serif;
+ font-weight: 400;
+font-style: normal;
+margin-top: 20px;
+padding-top: 16px;
+}
+
+
+.more {
+    width: 40%;
+    height: 0px;
+    position: absolute;
+    right: 500px;
+    z-index: 100;
+    display: flex;
+    transition: 0.5s;
+    overflow: hidden;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    z-index: 200;
+}
+
+.mf {
+    width: 100%;
+    background-color: rgba(248, 252, 252, 1);
+    border-radius: 8px;
+    height: 43px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+
+}
+
+.razdeleniye1 {
+    width: 50%;
+    border-radius: 12px 0px 0px 12px;
+    border: 1px solid rgba(218, 230, 230, 1);
+    background-color: white;
+    padding: 20px;
+}
+
+
+.more li {
+    list-style-type: none;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: 0.5s;
+
+}
+
+.more li:hover {
+    background-color: rgba(248, 252, 252, 1);
+
+}
+
+.more li a:hover {
+    color: rgba(56, 148, 151, 1);
+}
+
+.more a {
+    text-decoration: none;
+    color: rgba(16, 24, 24, 1);
+    transition: 0.5s;
+
+
+}
+
+.razdeleniye2 {
+    width: 50%;
+    border-radius: 0px 12px 12px 0px;
+    border: 1px solid rgba(218, 230, 230, 1);
+    background-color: white;
+    padding: 20px;
+
+
+
+}
+
+
+.foto1 {
+    position: absolute;
+    right: 1%;
+    top: 150px;
+}
+
+.foto2 {
+    position: absolute;
+    right: 52%;
+    top: 180px;
+}
+
+.foto3 {
+    position: absolute;
+    right: 42%;
+    top: 480px;
+}
+
+.foto4 {
+    position: absolute;
+    right: 3%;
+    top: 700px;
+}
+
+.foto5 {
+    position: absolute;
+    right: 40%;
+    top: 70px;
+}
+
+.nacalo {
+    width: 100%;
+    padding: 100px 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.baza_dya_infi {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.nacalniy_text {
+    width: 41%;
+    height: 300px;
+    position: relative;
+}
+
+.nacalniy_text li {
+    list-style-type: none;
+    margin-bottom: 12px;
+}
+
+.nacalniy_text i {
+    margin-right: 8px;
+    color: rgba(56, 148, 151, 1);
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+
+}
+
+.nacalniy_text ul li {
+    color: rgba(85, 125, 126, 1);
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 66px;
+    margin-left: 30px;
+}
+
+.nacalniy_text ul {
+    margin-bottom: 50px;
+}
+
+.nacalniy_text h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.nacalniy_text a {
+    padding: 10px 35px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.nacalnoye_foto {
+    width: 58%;
+    height: 429px;
+    z-index: 100;
+
+}
+
+.nacalnoye_foto img {
+    width: 100%;
+    height: 90%;
+}
+
+
+
+.contact {
+    background-color: rgba(56, 148, 151, 1);
+    border: none;
+    color: white;
+    margin-right: 20px;
+    transition: 0.5s;
+}
+
+.contact:hover {
+    background-color: rgba(44, 117, 119, 1);
+}
+
+.post {
+    background-color: white;
+    color: rgba(56, 148, 151, 1);
+    border: 1.5px solid rgba(56, 148, 151, 1);
+    transition: 0.5s;
+
+}
+
+.post:hover {
+    background-color: rgba(233, 246, 247, 1);
+    color: rgba(56, 148, 151, 1);
+
+}
+
+.podklass {
+    width: 100%;
+    height: 50px;
+    color: rgba(16, 24, 24, 1);
+    margin-top: 100px;
+    font-size: 28px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+}
+
+.podklass a {
+    color: rgba(16, 24, 24, 1);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.podklass i {
+    margin-left: 12px;
+}
+.mob{
+    display: none;
+}
+
+
+.tri_ramki {
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+
+
+.kajdaya_ramka {
+    width: 32%;
+    height: 196px;
+    border-radius: 24px;
+    background-color: rgba(248, 252, 252, 1);
+    border: 1px solid rgba(56, 148, 151, 1);
+    padding: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 100;
+
+}
+
+.kajdaya_ramka p {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(85, 125, 126, 1);
+}
+
+.kajdaya_ramka span {
+    font-weight: 700;
+    color: rgba(68, 100, 100, 1);
+}
+
+.zgl p {
+    font-size: 24px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    color: rgba(16, 24, 24, 1);
+}
+
+.kajdaya_ramka:hover {
+    height: 450px;
+}
+
+
+.krug {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(56, 148, 151, 1);
+    border-radius: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.krug img {
+    width: 30px;
+    height: 30px;
+
+}
+.krug2 img {
+    width: 50px;
+    height: 50px;
+
+}
+
+
+
+/* tovar */
+.kar{
+    width: 100%;
+    padding-bottom: 20px;
+    /* height: 300px; */
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    /* background-color: #389497; */
+    display: none !important;
+    margin-top: 24px;
+}
+.kar .item{
+    width: 70% !important;
+
+
+}
+.nmd {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 24%;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #B9CFD0;
+}
+
+.item .img {
+    width: 100%;
+    height: 224px;
+}
+
+.item .img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.item .txt {
+    background-color: #F8FCFC;
+    padding: 12px;
+}
+
+.item .txt .name {
+    font-size: 20px;
+    height: 58px;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.item .txt .cat {
+    padding: 4px 12px;
+    color: #389497;
+    background-color: #E9F6F7;
+    border-radius: 4px;
+    width: fit-content;
+    line-height: 1;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.podklass_mob{
+    display: none;
+}
+
+/* partners */
+
+.partners {
+    width: 100%;
+    background-image: url(Rectangle\ 4836.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    padding: 0px 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.partner {
+    width: 10%;
+    height: 200px;
+}
+
+.partner img {
+    width: 100%;
+}
+
+.partner1 {
+    width: 22%;
+    padding-top: 25px;
+}
+
+.partner2 {
+    width: 10%;
+}
+
+.partner3 {
+    width: 22%;
+    padding-top: 20px;
+
+}
+
+.partner4 {
+    width: 16%;
+    /* padding-top: 20px; */
+
+}
+
+.partner5 {
+    width: 14%;
+    /* padding-top: 20px; */
+
+}
+
+/* Contact */
+.contact_us {
+    width: 100%;
+    padding: 0px 120px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    position: relative;
+}
+
+.casti {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+   height: 950px;
+}
+.casti2{
+height: 850px;
+}
+
+.danniye {
+    width: 100%;
+    height: 200px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.danniye h4 {
+    font-size: 28px;
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: rgba(16, 24, 24, 1);
+    margin-left: 110px;
+}
+
+.danniye p {
+    color: rgba(51, 76, 76, 1);
+    font-size: 20px;
+    margin-left: 110px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 30px;
+
+}
+
+.danniye img {
+    position: absolute;
+    left: 0px;
+
+}
+
+.foto6 {
+    top: 10px;
+}
+
+.foto7 {
+    top: 95px;
+}
+
+.foto8 {
+    right: 7%;
+    top: 650px;
+    position: absolute;
+}
+
+.foto_krasivo {
+    width: 100%;
+    background-color: #ffffff;
+
+}
+
+.foto_krasivo img {
+    width: 85%;
+}
+
+.ramka {
+    width: 80%;
+    height: 750px;
+    border-radius: 20px;
+    margin: auto;
+    border: 1px solid rgba(185, 207, 208, 1);
+    padding: 26px;
+    z-index: 100;
+    background-color: white;
+    margin-bottom: 300px;
+
+}
+
+.ramka input {
+    width: 100%;
+    height: 46px;
+    padding-left: 20px;
+    border: 1px solid rgba(223, 228, 234, 1);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    position: relative;
+}
+.ramka textarea{
+    width: 100%;
+    height: 197px;
+    padding-left: 20px;
+    border: 1px solid rgba(223, 228, 234, 1);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    position: relative;
+    padding-top: 12px;
+}
+::placeholder {
+    color: rgba(148, 182, 183, 1);
+    opacity: 1;
+    /* top: 14px; */
+    /* position: absolute; */
+    /* left: 20px; */
+}
+
+.bolwoy_input {
+    height: 197px !important;
+}
+
+.ramka p {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+}
+
+.ramka button {
+    width: 162px;
+    height: 50px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 25px;
+}
+
+.danniye li {
+    list-style-type: none;
+    margin-bottom: 12px;
+}
+/* footer */
+footer {
+    width: 100%;
+    height: 240px;
+    background-color: rgba(56, 148, 151, 1);
+    padding: 140px 120px 50px 120px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer1 {
+    width: 33%;
+    height: 50px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    color: white;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+
+}
+
+.footer1 h5 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer1 p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 12px;
+}
+
+.telefon {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    margin-top: 15px;
+
+}
+
+.footer2 {
+    width: 40%;
+    height: 50px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+
+}
+
+.footer2 p {
+    margin-right: 36px;
+
+}
+
+.footer2 ul li {
+    display: inline-block;
+
+}
+
+.footer2 li {
+    margin-right: 36px;
+
+}
+
+
+@media(max-width:768px) {
+    .foto1 {
+        display: none;
+    }
+
+    .foto2 {
+        display: none;
+    }
+
+    .foto3 {
+        display: none;
+    }
+
+    .foto4 {
+        display: none;
+    }
+
+    .nomer_telefona {
+        width: 80%;
+    justify-content: left;
+
+    }
+
+    header {
+        padding: 6px 24px;
+    }
+
+    nav {
+        padding: 12px 24px;
+    }
+
+    .perexod_na_stranici ul li {
+        display: none;
+    }
+
+    .nacalo {
+        padding: 50px 24px;
+        position: relative;
+
+    }
+    .perexod_na_stranici{
+        display: none;
+    }
+    .menu{
+        display:inline;
+        color: white;
+        width: 10%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        font-size: 20px;
+
+    }
+.otkr{
+    /* flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    width: 500px;
+    height:500px;
+    color: #389497; */
+
+}
+    .nacalniy_text {
+        width: 100%;
+    }
+
+    .nacalniy_text h1 {
+        font-size: 32px;
+        margin-bottom: 16px;
+    }
+
+    .nacalnoye_foto {
+        width: 88%;
+        height: 212px;
+        z-index: 100;
+        position: absolute;
+        top: 200px;
+
+    }
+
+    .nacalniy_text ul {
+        margin-top: 250px;
+
+    }
+
+    .podklass1 {
+        margin-top: 400px;
+        font-size: 24px;
+    }
+    .nemob{
+        display: none;
+    }
+    .mob{
+        display: flex;
+        width: 20%;
+        padding-top: 10px;
+    }
+
+    .tri_ramki {
+        flex-wrap: wrap;
+        height: 900px;
+        padding-bottom: 20px;
+
+    }
+
+    .kajdaya_ramka {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .item{
+        width: 90%;
+    }
+    .item2{
+        display: none;
+    }
+    .podklass_nemob{
+        display: none;
+    }
+    .podklass_mob{
+        display: flex;
+    }
+    .nmd{
+        display: none;
+
+    }
+    .kar{
+        display: flex !important;
+    
+    }
+    .partners{
+        padding: 0px 24px;
+        height: 630px;
+    }
+    .partner{
+        width: 50%;
+        height: 150px;
+    }
+    .partner2{
+        width: 30%;
+    }
+    .partner5{
+        margin: auto;
+    }
+    .podklass2{
+        margin-top: 70px;
+    }
+    .contact_us{
+        padding: 0px 24px;
+    }
+    .casti{
+        width: 100%;
+    }
+    .ramka{
+        width: 100%;
+    }
+    .foto5 {
+        left:-8%;
+        top: 600px;
+    }
+    .foto8 {
+        right: 0%;
+        top: 1250px;
+    }
+    footer{
+        padding: 28px 20px 50px 20px;
+        height: 202px;
+    }
+    .footer1{
+        width: 50%;
+        margin-top: 88px;
+    }
+    .footer2 {
+        width: 50%;
+
+    }
+    .footer1 p {
+        font-size: 16px;
+    }
+    .casti2{
+        height: 520px;
+    }
+    .footer2 ul{
+text-align: right;
+
+    }
+    .footer2 li{
+        margin-bottom: 14px;
+        font-size: 16px;
+    }
+
+}

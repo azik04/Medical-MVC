@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sənəd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/site.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="icon" href="/img/Pages/favicon.png" type="image/icon type">
+</head>
+
+<body>
+    <header class="box">
+        <div class="nomer_telefona">
+            <img src="/img/Pages/phone outlined icon.png" alt="">
+            <p>+994 50 684 39 82</p>
+        </div>
+        @* <div class="vibor_yazika"><a href="">EN</a><i class="fa-solid fa-chevron-down"></i></div> *@
+      @*   <div class="yaziki">
+            <ul>
+                <li><a href="">AZ</a></li>
+                <li><a href="">RU</a></li>
+            </ul>
+        </div> *@
+    </header>
+    <nav>
+        <div class="box d-flex justify-content-between align-items-center">
+            <div class="logo"><a asp-controller="home" asp-action="index"><img src="/img/Pages/Group 1000004143.png" alt=""></a></div>
+            <div class="menu"><i class="fa-solid fa-bars"></i></div>
+            <div class="otkr">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="vibor_kat">
+                    <div class="kat otkr-search">
+                        <i class="fa-solid fa-magnifying-glass"></i> Axtarış</li>
+                    </div>
+                    <div class="kat d-flex align-items-center  search-group   d-none">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" class="form-control" placeholder="Axtarış">
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg ms-2" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                        </svg>
+                    </div>
+                    <div class="kat"><a class="info2" href="/home/index">Ana Səhifə</a></div>
+                    <div class="kat"><a class="info2" href="/product">Məhsullar</a></div>
+                    <div class="kat"><a class="info2" href="/product/request">Elan yerləşdir</a></div>
+                    <div class="kat"><a class="info2" href="/home/contact">Əlaqə</a></div>
+                </div>
+
+            </div>
+
+            <div class="perexod_na_stranici">
+                <ul class="m-0">
+                    <li><a class="info2" href="/home/index">Ana Səhifə</a></li>
+                    <li><a class="info2" href="/product">Məhsullar</a></li>
+                    <li><a class="info2" href="/product/request">Elan yerləşdir</a></li>
+                    <li><a class="info2 info3" href="/home/contact">Əlaqə</a></li>
+                    <li class="search-group d-none">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" class="form-control" placeholder="Axtarış">
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-lg viyti ms-2" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                        </svg>
+                    </li>
+                    <li class="lupa1">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+    <footer>
+        <div class="box d-flex justify-content-between">
+
+            <div class="footer1">
+                <h5>Medbay</h5>
+                <div class="telefon">
+                    <img src="/img/Pages/phone outlined icon (b).png" alt="">
+                    <p>+994 50 684 39 82</p>
+                </div>
+            </div>
+            <div class="footer2">
+                <ul>
+                    <li><a class="footer-router" href="/product">Məhsullar</a></li>
+                    <li><a class="footer-router" href="/product/request">Elan yerləşdir</a></li>
+                    <li><a class="footer-router" href="/home/contact">Əlaqə</a></li>
+                </ul>
+                <p>© 2024 MedBay.</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+</body>
+
+</html>

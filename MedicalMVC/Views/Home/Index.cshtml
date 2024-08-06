@@ -1,0 +1,160 @@
+﻿@model IndexHomeVM
+
+<div class="nacalo">
+    <img class="foto1" src="/img/Pages/Vector.png" alt="">
+    <img class="foto2" src="/img/Pages/Group 1000004136.png" alt="">
+    <img class="foto3" src="/img/Pages/Vector2.png" alt="">
+    <img class="foto4" src="/img/Pages/Vector3.png" alt="">
+      
+
+
+    <div class="baza_dya_infi box">
+        <div class="nacalniy_text">
+            <h1>
+                Tibbi avadanlıqların ticarətini <span style="color: rgba(56, 148, 151, 1);">
+                    sürətli və
+                    asan
+                </span> edən platforma
+            </h1>
+            <ul>
+                <li>
+                    <i class="fa-regular fa-circle-check"></i>Yeni, ikinci əl və təmir olunmuş tibbi cihazları alın, satın və ya dəyişdirin.
+                </li>
+                <li>
+                    <i class="fa-regular fa-circle-check"></i>Müxtəlif tibbi avadanlıq variantlarını əlverişli qiymətlərlə araşdırın.
+                </li>
+                <li>
+                    <i class="fa-regular fa-circle-check"></i>Bu sahədə bilikli mütəxəssislərdən yardım alın.
+                </li>
+            </ul>
+            <div class="a_cont">
+                <a asp-controller="home" asp-action="contact">Əlaqə</a>
+                <a class="post" asp-controller="product" asp-action="request">Elan yerləşdir</a>
+            </div>
+     
+        </div>
+        <div class="nacalnoye_foto"><img src="/img/Pages/Union.png" alt=""></div>
+
+        <div class="podklass podklass1">
+            <p>Xidmətlərimiz</p>
+        </div>
+        <div class="tri_ramki">
+            <div class="kajdaya_ramka">
+                <div class="krug"><img src="/img/Pages/Vector31.png" alt=""></div>
+                <div class="zgl" style="width: 100%;">
+                    <p>Almaq istəyənlər üçün</p>
+                </div>
+                <p>
+                    <span>Geniş tibbi cihazlar inventarımızı</span> araşdırın, müxtəlif seçim variantları ilə doludur. Lazım olanı tapdıqdan sonra sadəcə <span>
+                        təmin edilmiş əlaqə nömrəsindən istifadə edin
+                    </span> və alış prosesinə başlayın.
+                </p>
+            </div>
+            <div class="kajdaya_ramka">
+                <div class="krug"><img src="/img/Pages/Vector32.png" alt=""></div>
+                <div class="zgl" style="width: 100%;">
+                    <p>Satmaq istəyənlər üçün</p>
+                </div>
+                <p>
+                    Tibbi avadanlıqlarınızı potensial alıcılara <span>elan yerləşdirərək</span> göstərin. İstər səhiyyə təminatçısı olun, istərsə də təmir olunmuş cihazlarla məşğul olun, <span>
+                        maraqlanan müştərilərlə asanlıqla əlaqə qurun
+                    </span>.
+                </p>
+            </div>
+            <div class="kajdaya_ramka">
+                <div class="krug krug2"><img src="/img/Pages/Vector33.png" alt=""></div>
+                <div class="zgl" style="width: 100%;">
+                    <p>Satıcıları birləşdirmək</p>
+                </div>
+                <p>
+                    Platformamız <span>alıcılar və satıcılar arasında</span> problemsiz əlaqələri təmin edir, bu prosesi <span>mütəxəssis admin</span> komandamız idarə edir. Adminlərimiz əsas əlaqə nöqtəsi olaraq <span>rahat tranzaksiyalar</span> üçün əlaqələri asanlaşdırır.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="podklass box pb-3 mt-5">
+        <p class="mb-0">Yeni Tibbi Cihazlar</p> <a class="mob" href=""><i class="fa-solid fa-arrow-right-long"></i></a><a asp-controller="product" asp-action="" class="nemob">Hamısını Görüntülə <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+    <div class="nmd box prd-box">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                @if (Model.LatestProduct != null)
+                {
+                    @foreach (var item in Model.LatestProduct)
+                    {
+                        <div class="item swiper-slide mb-0">
+                            <a asp-controller="product" asp-action="id" asp-route-id="@item.Id">
+                                <div class="img">
+                                    @if (item.Photos != null)
+                                    {
+                                        foreach (var ph in item.Photos)
+                                        {
+                                            <img src="/img/@ph.PhotoName" alt="@item.Name">
+                                        }
+                                    }
+                                </div>
+                                <div class="txt">
+                                    <div class="name mb-3">
+                                        <h4 class="mb-0 lato fw-700">@item.Name</h4>
+                                    </div>
+                                    <div class="cat">
+                                        <span class="lato">@item.Category.Name</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div>Son məhsullar yoxdur</div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="podklass podklass_nemob box pt-5 pb-3">
+        <p class="mb-0">İkinci əl Tibbi Cihazlar</p><a asp-controller="product" asp-action="">Hamısını Görüntülə <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+    <div class="podklass podklass_mob box pt-5 pb-3">
+        <p class="mb-0">İkinci əl Cihazlar</p><a class="mob" asp-controller="product" asp-action=""><i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+    <div class="nmd box prd-box">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                @if (Model.SecondHandProduct != null)
+                {
+                    @foreach (var item in Model.SecondHandProduct)
+                    {
+                        <div class="item swiper-slide mb-0">
+                            <a asp-controller="product" asp-action="id" asp-route-id="@item.Id">
+                                <div class="img">
+                                    @if (item.Photos != null)
+                                    {
+                                        foreach (var ph in item.Photos)
+                                        {
+                                            <img src="/img/@ph.PhotoName" alt="@item.Name">
+                                        }
+                                    }
+                                </div>
+                                <div class="txt">
+                                    <div class="name mb-3">
+                                        <h4 class="mb-0 lato fw-700">@item.Name</h4>
+                                    </div>
+                                    <div class="cat">
+                                        <span class="lato">@item.Category.Name</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div>Son məhsullar yoxdur</div>
+                }
+            </div>
+        </div>
+    </div>

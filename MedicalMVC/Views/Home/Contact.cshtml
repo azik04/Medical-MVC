@@ -1,0 +1,50 @@
+﻿@model Request
+
+<div class="contact_us box">
+    <img class="foto5" src="/img/Pages/Group 1000004135.png" alt="">
+    <img class="foto8" src="/img/Pages/Vector4.png" alt="">
+    <div class="navigation">
+        <span><a class="select" asp-controller="Home" asp-action="Index">Ana səhifə</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="select">Elan yerləşdir</span>
+    </div>
+    <div class="podklass w-100">
+        <p>Bizimlə əlaqə</p>
+    </div>
+    <div class="casti casti2">
+        <div class="danniye">
+            <ul>
+                <li>
+                    <img class="foto6" src="/img/Pages/Group 1000004137.png" alt="">
+                    <h4>Telefon nömrəsi</h4>
+                    <p>+994 50 684 39 82</p>
+                </li>
+                <li>
+                    <img class="foto7" src="/img/Pages/Group 10000041372.png" alt="">
+                    <h4>Email ünvanı</h4>
+                    <p>email@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <div class="foto_krasivo"><img src="/img/Pages/pngegg (1) 1.png" alt=""></div>
+    </div>
+    <div class="casti">
+        <div class="ramka">
+            <form method="post" asp-controller="home" asp-action="contact">
+                <p>Adınız</p>
+                <input type="text" asp-for=@Model.Name placeholder="Adınızı daxil edin">
+                <span class="text-danger validation">@Html.ValidationMessageFor(model => model.Name)</span>
+                <p>Telefon nömrəniz</p>
+                <input type="text" asp-for=@Model.Phone placeholder="Telefon nömrənizi daxil edin">
+                <span class="text-danger validation">@Html.ValidationMessageFor(model => model.Phone)</span>
+                <p>Email</p>
+                <input type="text" asp-for=@Model.Email placeholder="Email ünvanınızı daxil edin">
+                <span class="text-danger validation">@Html.ValidationMessageFor(model => model.Email)</span>
+                <p>Mesajınız</p>
+                <textarea name="" id="" placeholder="Mesajınızı daxil edin" asp-for="Message" name="Message"></textarea>
+                <span class="text-danger validation">@Html.ValidationMessageFor(model => model.Message)</span>
+                <button class="contact" type="submit">Mesajı Göndər</button>
+            </form>
+        </div>
+    </div>
+</div>

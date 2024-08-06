@@ -1,0 +1,70 @@
+﻿@model ICollection<Product>
+<section class="products box">
+    <div class="navigation">
+        <span><a class="select" asp-area="" asp-controller="home" asp-action="Index">Home</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span><a class="select" asp-area="admin" asp-controller="home" asp-action="Index">Admin</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="select">Not Confirmed Products</span>
+    </div>
+    <h2 class="mb-4 prod">Need To Confirm <span class="d-none">(43)</span></h2>
+    <div class="items">
+        <div class="products-box prd-box">
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    if (item == null)
+                    {
+                        <h2>No Products Found</h2>
+                    }
+                    else
+                    {
+                        <div class="item">
+                            <a asp-controller="product" asp-action="confirm" asp-route-id="@item.Id">
+                                <div class="img">
+                                    @if (item.Photos != null)
+                                    {
+                                        foreach (var ph in item.Photos)
+                                        {
+                                            <img src="/img/@ph.PhotoName" alt="@item.Name">
+                                        }
+                                    }
+                                </div>
+                                <div class="txt">
+                                    <div class="name mb-3">
+                                        <h4 class="mb-0 lato fw-700">Click to Confirm</h4>
+                                    </div>
+                                    <div class="cat">
+                                        @if (item.Category != null)
+                                        {
+                                            <span class="lato">@item.Category.Name</span>
+                                        }
+                                        else
+                                        {
+                                            <p>No Category</p>
+                                        }
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="remove-itm">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <form asp-area="admin" asp-controller="product" asp-action="remove" asp-route-id="@item.Id">
+                                        <button class="but-rem" type="submit">Remove</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                <h2>No Products</h2>
+            }
+        </div>
+    </div>
+    <div class="media-filter ">
+    </div>
+</section>

@@ -1,0 +1,58 @@
+﻿<section class="admin box">
+    <h2>Hi Admin</h2>
+    <div class="navigation ">
+        <span><a class="select" asp-area="" asp-controller="home" asp-action="index">Home</a></span>
+        <span class="mx-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <span class="select">Admin Page</span>
+    </div>
+    <div class="admin-menu-all ">
+        <a asp-controller="product" asp-action="notconfirmed" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Submit Requests</h3>
+        </a>
+        <a asp-controller="category" asp-action="newcategory" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <h3>Create Category</h3>
+        </a>
+        <a asp-controller="category" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-list"></i>
+            </div>
+            <h3>See all Categories</h3>
+        </a>
+        <a asp-controller="request" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <h3>See all Requests</h3>
+        </a>
+        <a asp-controller="user" asp-action="admins" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <h3>See All Admins</h3>
+        </a>
+        <a asp-controller="user" asp-action="registrate" class="admin-menu">
+            <div class="admin-menu-icon">
+                <i class="fa-solid fa-address-card"></i>
+            </div>
+            <h3>Create an Admin</h3>
+        </a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <form asp-controller="user" asp-action="logout" method="post" class="admin-menu">
+                <button type="submit" class="admin-menu-button btn">
+                    <div class="admin-menu-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </div>
+                    <h3>Log Out</h3>
+                </button>
+            </form>
+        }
+
+    </div>
+</section>
